@@ -7,8 +7,13 @@ namespace BasicLogger
 {
     public class Logging
     {
+        public static bool Enabled { get; set; }
+
         public static void WriteLine(string p_format, params object[] p_args)
         {
+            if (!Enabled)
+                return;
+
             // get the directory path containing this library
             string libraryLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
