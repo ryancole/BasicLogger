@@ -7,7 +7,13 @@ namespace BasicLogger
 {
     public class Logging
     {
+        #region Properties
+
         public static bool Enabled { get; set; }
+
+        #endregion
+
+        #region Methods
 
         public static void WriteLine(string p_format, params object[] p_args)
         {
@@ -44,5 +50,7 @@ namespace BasicLogger
                 File.WriteAllText(logLocation, logLine, Encoding.UTF8);
             }
         }
+
+        #endregion
     }
 }
